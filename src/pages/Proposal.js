@@ -98,7 +98,7 @@ const Proposal = ({account, contract, id}) => {
         <div className="widgets">
           <Widget info={upvotes} title="Votes For">
             <div className="extraWidgetInfo">
-              <div className="extraTitle">{(upvotes==0 && downvotes==0)?0:((parseInt(upvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%</div>
+              <div className="extraTitle">{(parseInt(upvotes)===0 && parseInt(downvotes)===0)?0:((parseInt(upvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%</div>
               <div className="progress">
                 <div className="progressPercentage" style={{width: `${(upvotes==0 && downvotes==0)?0:((parseInt(upvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%`}}></div>
               </div>
@@ -106,9 +106,9 @@ const Proposal = ({account, contract, id}) => {
           </Widget>
           <Widget info={downvotes} title="Votes Against">
             <div className="extraWidgetInfo">
-              <div className="extraTitle">{(upvotes==0 && downvotes==0)?0:((parseInt(upvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%</div>
+              <div className="extraTitle">{(parseInt(upvotes)===0 && parseInt(downvotes)===0)?0:((parseInt(downvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%</div>
               <div className="progress">
-                <div className="progressPercentage" style={{width: `${(upvotes==0 && downvotes==0)?0:((parseInt(upvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%`}}></div>
+                <div className="progressPercentage" style={{width: `${(parseInt(upvotes)===0 && parseInt(downvotes==0))?0:((parseInt(downvotes)*100)/(parseInt(upvotes)+parseInt(downvotes)))}%`}}></div>
               </div>
             </div>
           </Widget>
